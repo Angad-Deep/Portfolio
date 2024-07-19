@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Achievements</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            background-image: url("../Images/Background.jpg");
+            background-color: black;
+            background-size: cover;
+            color: whitesmoke;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        div[class="box"]{
+            width: 100vw; 
+            height: 50px;
+            background-color: black; 
+            text-align: left;
+            display:inline-flex;
+            border:double whitesmoke;
+            padding-top: 10px;
+            padding-left: 0;
+            margin-left:1px;
+        }
+        div[class="box"] a{
+            font-size: 30px;
+            margin-right: 40px; 
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        div[class="box"] a:hover{
+            color: yellow;
+        }
+        div[class="header"] {
+            width: 25%; 
+            height: 50px;
+            background-color: black;
+            border:5px double whitesmoke;
+            border-radius:50px;
+            text-align: center;
+            margin: 20px auto;
+            padding-top: 10px;
+            padding-left:5px;
+        }
+        div[class="header"] h1{
+            font-size:30px;        
+            margin: 0 auto;
+            text-align: center;
+            padding-top:2px;
+        }
+        img {
+            height: 30px; 
+            width: 30px; 
+            margin:0;
+            display: block;
+            box-shadow: 2px 0 4px 4px white;
+            border:double white;
+            border-width: 5px;
+            border-radius: 50px;
+        }
+        h1 {
+            font-size: 30px; 
+            color: white;
+            text-align:center;
+            margin-top:0;
+        }
+        div[class="project"] {
+            text-align: left;
+            margin: 60px;
+            border: 5px double white;
+            border-radius:20px;
+            background-color:black;
+            color:white;
+            box-shadow:2px 2px 4px 4px yellow;
+            margin-left:50px;
+            font-size:larger;
+        }
+        @media (max-width: 425px) {
+            body {
+                background-image: url("../Images/Background.jpg");
+                background-color: black;
+            }
+            div[class="box"] {
+                display: none;
+            }
+            div[class="header"] {
+                width: 50%;
+                height: 50px;
+                background-color: black;
+                border: 5px double whitesmoke;
+                border-radius: 50px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                padding-top: 10px;
+            }
+            div[class="header"] h1 {
+                font-size: 25px;
+                color: white;
+                text-align: center;
+                margin-top: 0;
+                padding-top:5px;
+            }
+            p {
+                white-space: pre-wrap;
+                margin: 0 auto;
+                text-align: center;
+            }
+            img {
+                height: 10px;
+                width: 10px;
+                border: double white;
+                box-shadow: none;
+                margin: none;
+                border-width: 2px;
+                border-radius: 20px;
+            }
+            div[class="project"] {
+                text-align: center;
+                margin: 0 auto;
+                word-wrap: break-word;
+                font-size: larger;
+            }
+            div[class="project"] b {
+                text-decoration: underline cyan;
+            }
+            h2 {
+                text-align: center;
+                font-size: 30px;
+                text-decoration: underline white;
+            }
+            ul,
+            ol {
+                list-style-position: inside;
+                text-align: left;
+            }
+            /* Hamburger menu styles */
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+            .menu-icon div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 4px;
+                transition: 0.4s;
+            }
+            .menu-icon.active .bar1 {
+                transform: rotate(-45deg) translate(-5px, 5px);
+            }
+            .menu-icon.active .bar2 {
+                opacity: 0;
+            }
+            .menu-icon.active .bar3 {
+                transform: rotate(45deg) translate(-5px, -5px);
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                background-color: black;
+                border: 5px double whitesmoke;
+                width: 225px;
+                padding: 10px;
+                z-index: 1;
+            }
+            .menu a {
+                padding: 10px;
+                text-decoration: none;
+                color: whitesmoke;
+                text-align: left;
+                width: 100%;
+                font-size:30px;
+            }
+            .menu a:hover {
+                background-color: gray;
+            }
+        }
+
+        @media (min-width: 426px) {
+            .menu {
+                display: none;
+            }
+            /* Hide the menu icon on devices larger than 425px */
+            .menu-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a style="margin-left:60px;" href="javascript:history.back()">
+            <img src="../Images/Back Arrow.png">
+        </a>
+        <h1><a href="Angad's Portfolio.html">Home</a></h1>
+        <h1><a href="Projects.html">Projects</a></h1>
+        <h1><a href="Achievements.html">Achievements</a></h1>
+        <h1><a href="About.html">About</a></h1>
+        <h1><a href="Contact Us.html">Contact Us</a></h1>
+    </div>
+    <div class="header">
+        <h1><b>Achievements</b></h1>
+    </div>
+    <div class="project">
+        <ul>
+            <li>Scored 93.8% CBSE Class-X</li>
+            <br><li>Class Topper in Computer Science and English in junior year of high school</li>
+            <br><li>Global Rank- 53, Class Rank-1 (Class Topper Gold Medal) in International French Language Olympiad, 2019</li>
+            <br><li>Byju's DSSL Round 1 Winner</li>
+            <br><li>1st Position for the Academic Year 2018-19</li>
+            <br><li>Scored 92.1% in 6th, 7th, as well as 8th Standards</li>
+            <br><li>Excelled in Hindustan Times Code-a-thon Championship (2020)</li>
+            <br><li>Bronze Medal at Open Chess Carnival</li>
+            <br><li>Trophy (4th Place) at 4th Perados Chess Event</li>
+            <br><li>528th position in 44th Chess Olympiad Torch Run International Open Rapid Chess Tournament</li>
+        </ul>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="Angad's Portfolio.html">Home</a><br><hr><br>
+        <a href="Projects.html">Projects</a><br><hr><br>
+        <a href="Achievements.html">Achievements</a><br><hr><br>
+        <a href="About.html">About</a><br><hr><br>
+        <a href="Contact Us.html">Contact Us</a><br>
+    </div>
+
+    <script type="text/javascript">
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var icon = document.querySelector(".menu-icon");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+                icon.classList.remove("active");
+            } else {
+                menu.style.display = "block";
+                icon.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>

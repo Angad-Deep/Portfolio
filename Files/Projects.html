@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            background-image: url("../Images/Background.jpg");
+            background-color: black;
+            background-size: cover;
+            color: whitesmoke;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        div[class="box"]{
+            width: 100vw; 
+            height: 50px;
+            background-color: black; 
+            text-align: left;
+            display:inline-flex;
+            border:double whitesmoke;
+            padding-top: 10px;
+            padding-left: 0;
+            margin-left:1px;
+        }
+        div[class="box"] a{
+            font-size: 30px;
+            margin-right: 40px;
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        img {
+            height: 30px; 
+            width: 30px; 
+            margin:0;
+            display: block;
+            box-shadow: 2px 0 4px 4px white;
+            border:double white;
+            border-width: 5px;
+            border-radius: 50px;
+        }
+        div[class="header"] {
+            width: 25%; 
+            height: 50px;
+            background-color: black;
+            border:5px double whitesmoke;
+            border-radius:50px;
+            text-align: center;
+            margin: 20px auto;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        div[class="header"] h1{
+            font-size:30px;        
+            margin: 0 auto;
+            text-align: center;
+            padding-top:2px;
+        }
+        div[class="header"] img{
+            height: 30px; 
+            width: 30px; 
+            margin:0;
+            display: block;
+            box-shadow: 2px 0 4px 4px white;
+            border:double white;
+            border-width: 5px;
+            border-radius: 50px;
+        }
+        h1 {
+            font-size: 30px; 
+            color: white;
+            margin: 0;
+        }
+        section[class="projects"] {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        div[class="project"] {
+            text-align: center;
+            margin: 60px;
+        }
+        div[class="project"] img {
+            width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            box-shadow: none;
+            border: none;
+            border-radius: 20px;
+        }
+        div[class="project"] a.button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 20px;
+            color: black;
+            background-color: rgb(0, 255, 64);
+            text-decoration: none;
+            border: 2px dashed whitesmoke;
+            width: fit-content;
+        }
+        div[class="project"] a.button:hover {
+            background-color: rgb(0, 204, 51);
+        }
+        .box a:hover{
+            color:rgb(0, 255, 0);
+        }
+
+        /* Media query for screens smaller than 425px */
+        @media (max-width: 425px) {
+            body {
+                background-image: url("../Images/Background.jpg");
+                background-color: black;
+            }
+            div[class="box"] {
+                display: none;
+            }
+            div[class="header"] {
+                width: 50%;
+                height: 50px;
+                background-color: black;
+                border: 5px double whitesmoke;
+                border-radius: 50px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                padding-top: 10px;
+            }
+            h1 {
+                font-size: 25px;
+                color: white;
+                text-align: center;
+                margin-top: 0;
+                padding-top:5px;
+            }
+            .projects {
+                padding: 10px;
+            }
+            div[class="project"] {
+                margin: 20px 10px;
+            }
+            div[class="project"] img {
+                width: 80%;
+                height: auto;
+            }
+            div[class="project"] a.button {
+                font-size: 16px;
+                padding: 8px;
+            }
+        }
+
+        /* Hamburger menu styles */
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+        .menu-icon.active .bar1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+        .menu-icon.active .bar2 {
+            opacity: 0;
+        }
+        .menu-icon.active .bar3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: black;
+            border: 5px double whitesmoke;
+            width: 225px;
+            padding: 10px;
+            z-index: 1;
+        }
+        .menu a {
+            padding: 10px;
+            text-decoration: none;
+            color: whitesmoke;
+            text-align: left;
+            width: 100%;
+            font-size: 20px;
+        }
+        .menu a:hover {
+            background-color: gray;
+        }
+        @media (min-width: 426px) {
+            .menu {
+                display: none;
+            }
+            /* Hide the menu icon on devices larger than 425px */
+            .menu-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a style="margin-left:60px;" href="javascript:history.back()">
+            <img src="../Images/Back Arrow.png">
+        </a>
+        <h1><a href="Angad's Portfolio.html">Home</a></h1>
+        <h1><a href="Projects.html">Projects</a></h1>
+        <h1><a href="Achievements.html">Achievements</a></h1>
+        <h1><a href="About.html">About</a></h1>
+        <h1><a href="Contact Us.html">Contact Us</a></h1>
+    </div>
+    <div class="header">
+        <h1><b>Projects</b></h1>
+    </div>
+    <section class="projects">
+        <div class="project">
+            <a href="https://scratch.mit.edu/projects/455116468">
+                <img src="../Images/WhatsApp.png" alt="WhatsApp">
+            </a>
+            <a href="https://scratch.mit.edu/projects/455116468" class="button">WhatsApp</a>
+        </div>
+        <div class="project">
+            <a href="https://scratch.mit.edu/projects/1022769033">
+                <img src="../Images/Language Translator.jpg" alt="Language Translator">
+            </a>
+            <a href="https://scratch.mit.edu/projects/1022769033" class="button">Language Translator</a>
+        </div>
+        <div class="project">
+            <a href="https://scratch.mit.edu/projects/471169723">
+                <img src="../Images/Scientific Calculator.png" alt="Scientific Calculator">
+            </a>
+            <a href="https://scratch.mit.edu/projects/471169723" class="button">Scientific Calculator</a>
+        </div>
+        <div class="project">
+            <a href="https://scratch.mit.edu/projects/471356741">
+                <img src="../Images/Clock.png" alt="Clock">
+            </a>
+            <a href="https://scratch.mit.edu/projects/471356741" class="button">Clock</a>
+        </div>
+        <div class="project">
+            <a href="https://scratch.mit.edu/projects/448146491">
+                <img src="../Images/Ludo.png" alt="Ludo">
+            </a>
+            <a href="https://scratch.mit.edu/projects/448146491" class="button">Ludo</a>
+        </div>
+        <div class="project">
+            <a href="https://scratch.mit.edu/projects/536759934">
+                <img src="../Images/Tic Tac Toe.png" alt="Corona Warrior">
+            </a>
+            <a href="https://scratch.mit.edu/projects/536759934" class="button">Corona Warrior 3</a>
+        </div>
+    </section>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="Angad's Portfolio.html">Home</a><br><hr><br>
+        <a href="Projects.html">Projects</a><br><hr><br>
+        <a href="Achievements.html">Achievements</a><br><hr><br>
+        <a href="About.html">About</a><br><hr><br>
+        <a href="Contact Us.html">Contact Us</a><br>
+    </div>
+
+    <script type="text/javascript">
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var icon = document.querySelector(".menu-icon");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+                icon.classList.remove("active");
+            } else {
+                menu.style.display = "block";
+                icon.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>

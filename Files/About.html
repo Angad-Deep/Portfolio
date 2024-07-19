@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            background-image: url("../Images/Background.jpg");
+            background-color: black;
+            color: whitesmoke;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        div[class="box"] {
+            width: 100vw; 
+            height: 50px;
+            background-color: black; 
+            text-align: left;
+            display: inline-flex;
+            border:double whitesmoke;
+            padding-top: 10px;
+            padding-left: 0;
+            margin-left: 1px;
+        }
+        div[class="box"] a {
+            font-size: 30px;
+            margin-right: 40px;
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        div[class="header"] {
+            width: 25%; 
+            height: 50px;
+            background-color: black;
+            border: 5px double whitesmoke;
+            border-radius: 50px;
+            text-align: center;
+            margin: 20px auto;
+            padding-top: 10px;
+        }
+        div[class="header"] h1{
+            font-size:30px;        
+            margin: 0 auto;
+            text-align: center;
+            padding-top:2px;
+        }
+        img {
+            height: 30px; 
+            width: 30px; 
+            margin: 0;
+            display: block;
+            box-shadow: 2px 0 4px 4px white;
+            border: double white;
+            border-width: 5px;
+            border-radius: 50px;
+        }
+        h1 {
+            font-size: 30px; 
+            color: white;
+            text-align: center;
+            margin-top: 0;
+        }
+        div[class="project"] {
+            text-align: center;
+            margin: 20px;
+            word-wrap: break-word;
+            font-size: larger;
+        }
+        ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            padding-left: 0; 
+        }
+        div[class="project"] ol,
+        ul {
+            list-style-position: inside;
+            padding-left: 0;
+            text-align: center;
+        }
+        li {
+            margin-left: 0; 
+            padding-left: 5px; 
+        }
+        p {
+            white-space: pre-wrap; 
+            margin: 0; 
+        }
+        h2 {
+            text-align: center;
+            font-size: 25px;
+            text-decoration: underline white;
+        }
+        div[class="project"] b {
+            text-decoration: underline cyan;
+        }
+        ol a {
+            display: inline-flex;
+            background-color: white;
+            color: black;
+            border: 5px groove cyan;
+            width: 100px;
+            height: auto;
+            text-align: center;
+            padding-left: 20px;
+        }
+        p a {
+            display: inline-flex;
+            background-color: none;
+            color: cyan;
+            border: none;
+            width: 50px;
+            height: auto;
+            text-align: center;
+            text-decoration: underline white;
+            font-size: larger;
+            margin: 0;
+            padding-right: 25px;
+        }
+        .box a:hover {
+            color: yellow;
+        }
+        @media (max-width: 425px) {
+            body {
+                background-image: url("../Images/Background.jpg");
+                background-color: black;
+            }
+            div[class="box"] {
+                display: none;
+            }
+            div[class="header"] {
+                width: 40%;
+                height: 50px;
+                background-color: black;
+                border: 5px double whitesmoke;
+                border-radius: 50px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+            h1 {
+                font-size: 35px;
+                color: white;
+                text-align: center;
+                margin-top: 0;
+            }
+            p {
+                white-space: pre-wrap;
+                margin: 0 auto;
+                text-align: center;
+            }
+            img {
+                height: 10px;
+                width: 10px;
+                border: double white;
+                box-shadow: none;
+                margin: none;
+                border-width: 2px;
+                border-radius: 20px;
+            }
+            div[class="project"] {
+                text-align: center;
+                margin: 0 auto;
+                word-wrap: break-word;
+                font-size: larger;
+            }
+            div[class="project"] b {
+                text-decoration: underline cyan;
+            }
+            h2 {
+                text-align: center;
+                font-size: 30px;
+                text-decoration: underline white;
+            }
+            ul,
+            ol {
+                list-style-position: inside;
+                text-align: center;
+            }
+            /* Hamburger menu styles */
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+            .menu-icon div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 4px;
+                transition: 0.4s;
+            }
+            .menu-icon.active .bar1 {
+                transform: rotate(-45deg) translate(-5px, 5px);
+            }
+            .menu-icon.active .bar2 {
+                opacity: 0;
+            }
+            .menu-icon.active .bar3 {
+                transform: rotate(45deg) translate(-5px, -5px);
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                background-color: black;
+                border: 5px double whitesmoke;
+                width: 225px;
+                padding: 10px;
+                z-index: 1;
+            }
+            .menu a {
+                padding: 10px;
+                text-decoration: none;
+                color: whitesmoke;
+                text-align: left;
+                width: 100%;
+                font-size:30px;
+            }
+            .menu a:hover {
+                background-color: gray;
+            }
+        }
+
+        @media (min-width: 426px) {
+            .menu {
+                display: none;
+            }
+            /* Hide the menu icon on devices larger than 425px */
+            .menu-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a style="margin-left:60px;" href="javascript:history.back()">
+            <img src="../Images/Back Arrow.png">
+        </a>
+        <h1><a href="Angad's Portfolio.html">Home</a></h1>
+        <h1><a href="Projects.html">Projects</a></h1>
+        <h1><a href="Achievements.html">Achievements</a></h1>
+        <h1><a href="About.html">About</a></h1>
+        <h1><a href="Contact Us.html">Contact Us</a></h1>
+    </div>
+
+    <div class="header">
+        <h1><b>About</b></h1>
+    </div>
+    <div class="project">
+        <h2>Introduction</h2>
+        <p>Greetings,
+
+I am Angad Deep, a dedicated senior high school student hailing from Uttar Pradesh, India, with a fervent interest in Computer Science, Web Development, Programming, and Chess. Alongside my academic pursuits, I am an active member of an Astronomy Club, enriching my knowledge of the cosmos through online resources.
+
+In alignment with my passions, I have crafted numerous Python applications, engaging games, and mobile applications using Scratch, along with developing foundational websites. Recognized as an Academic Scholar, I consistently excel in both scholastic endeavors and extracurricular activities. My achievements extend to the realm of Chess, where I have secured numerous medals, certificates, and a prestigious trophy.
+
+I am eager to continue my journey of exploration and innovation, leveraging my skills to make meaningful contributions in the fields that inspire me.
+        </p>
+
+        <h2>Academic Background</h2>
+        <p>Currently enrolled at K.D.B. Public School, I have established proficiency in an array of subjects, showcasing excellence particularly in Mathematics, Computer Science, and Artificial Intelligence. Furthermore, my linguistic aptitude spans across English, Hindi, and French.
+
+            Within the academic environment, I actively engage with my teachers, offering technical assistance whenever required, and extend support to my peers in completing their projects. My demeanor is characterized by kindness, empathy, and intelligence, all of which contribute to a harmonious and productive learning atmosphere.</p>
+        <br>
+        <h2>Extracurricular Activities</h2>
+        <p><b>Chess:</b>  
+            <ul>
+                <li>Actively participated in numerous chess competitions at the local and regional levels, consistently demonstrating strategic prowess and sportsmanship.</li>
+                <li>Secured multiple medals, certificates, and a prestigious trophy for outstanding performance in competitive chess events.</li>
+            </ul>
+            <b>Astronomy Club:</b> 
+            <ul>
+                <li>Actively engaged member of an Astronomy Club, dedicating time outside of school hours to pursue my passion for the cosmos.</li>
+                <li>Regularly attend club meetings, discussions, and stargazing sessions, deepening my understanding of celestial phenomena and astronomical principles.</li>
+            </ul>
+
+            <b>Technical Projects:</b> 
+            <ol>
+                <li>2D Snake Game using Python: Developed a classic 2D snake game where players navigate a snake to consume food and avoid obstacles, showcasing proficiency in Python programming and game development techniques.</li>
+                <br>
+                <li>Language Translator on Scratch: Designed and implemented an interactive language translation tool using Scratch, enabling users to input text in one language and receive translated output in another, demonstrating creativity and problem-solving skills.</li>
+                <br>
+                <li>WhatsApp Simulation on Scratch: Created a simulation of the popular messaging application WhatsApp using Scratch, with complete messaging functionality, contact lists, and multiple UI features, highlighting proficiency in visual programming and user interface design.</li>
+                <br>
+                <li>Scientific Calculator on Scratch: Engineered a fully functional scientific calculator on Scratch, equipped with advanced mathematical functions and a user-friendly interface, serving as a valuable educational tool for students studying mathematics and science.</li>
+                <br>
+                <li>Portfolio Website: Designed and developed a professional portfolio website showcasing personal projects, programming skills, and academic achievements using HTML, CSS, and JavaScript. The website serves as a comprehensive digital resume and platform for sharing insights and experiences with potential employers and collaborators.</li>
+            </ol>
+
+            <b>Academic Scholar:</b>
+            <ul>
+                <li>Consistently maintained top grades across all subjects, demonstrating a strong commitment to academic excellence and a deep understanding of diverse disciplines such as Mathematics, Computer Science, Artificial Intelligence, and multiple languages including English, Hindi, and French.</li>
+                <br>
+                <li>Demonstrated leadership in academic settings by tutoring classmates, assisting teachers with technical tasks, and leading study groups, fostering a collaborative and supportive learning environment.</li>
+                <br>
+                <li>Balanced academic responsibilities with extracurricular activities, excelling in areas such as Chess and Astronomy, and developing a well-rounded skill set that combines intellectual rigor with creative and strategic thinking.</li>
+            </ul>
+            <br>
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: Python, HTML, CSS, JavaScript</li>
+            <li>Soft Skills: Analytical Thinking, Problem-Solving, Empathy, Time Management, Listening Skills, Perseverance, Adaptability</li>
+            <li>Other Skills: Chess, Web & App Development, Attention to Detail, Project Management etc.</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on:
+            <br><a href="Projects.html">Projects</a>
+        </p>
+
+        <h2>Awards and Honors</h2>
+        <ol type="1">
+            <li>Byju's DSSL Round-1 Winner (Awards- Lenovo Tab & School Bag)</li>
+            <br>
+            <li>Bronze Medal in Open Chess Carnival</li>
+            <br>
+            <li>Trophy (4th Place) & Certificate in 4th Perados Chess Event</li>
+            <br>
+            <li>Ranked 528 in 44th Chess Olympiad Torch Run International Open Rapid Chess Tournament</li>
+            <br>
+            <li>Certificate for Completion of YLAC Digital Champions Program (2021)</li>
+        </ol>
+
+        <h2>Personal Interests</h2>
+        <p>Outside of school, I enjoy-
+            <ul>
+                <li>Chess</li>
+                <li>Programming</li>
+                <li>Astronomy</li>
+                <li>Cycling</li>
+                <li>Songs (English, Hindi)</li>
+            </ul>
+        </p>
+
+        <h2>Contact Information</h2>
+        <p style="padding-left:20px;"> You can reach out to me <a href="Contact Us.html">here</a> <br><br> or connect with me on-
+        <ol type="1">
+            <li><a href="https://www.instagram.com/angad_deep_1596/">Instagram</a></li>
+            <br>
+            <li><a href="https://www.youtube.com/@CodingOurRequirement">YouTube</a></li>
+            <br>
+            <li><a href="https://www.facebook.com/LearnWithAngad">Facebook</a></li>
+        </ol>
+        </p>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="Angad's Portfolio.html">Home</a><br><hr><br>
+        <a href="Projects.html">Projects</a><br><hr><br>
+        <a href="Achievements.html">Achievements</a><br><hr><br>
+        <a href="About.html">About</a><br><hr><br>
+        <a href="Contact Us.html">Contact Us</a><br>
+    </div>
+
+    <script type="text/javascript">
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var icon = document.querySelector(".menu-icon");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+                icon.classList.remove("active");
+            } else {
+                menu.style.display = "block";
+                icon.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>

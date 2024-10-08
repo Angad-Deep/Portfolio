@@ -4,8 +4,220 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="base.js">
+    <style type="text/css"> 
+        body {
+            background-image: url("../Images/Background.jpg");
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        section[class="intro"] {
+            padding: 20px;
+            text-align: center;
+            color: ghostwhite;
+            border-spacing: 20px;
+        }
+        section[class="projects"] {
+            padding: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            word-wrap: break-word;
+            color: ghostwhite;
+        }
+        div[class="box"]{
+            width: 98%; 
+            height: 50px;
+            background-color: black; 
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+        img {
+            height: auto; 
+            width: 250px; 
+            margin-top: 10px; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 3px 4px 5px rgb(251, 255, 0);
+            border:double white;
+            border-width: 5px;
+            border-radius: 50px;
+        }
+        div[class="project"] img{
+            height: auto; 
+            width: 250px; 
+            margin-top: 0; 
+            display: inline-flex;
+            margin-left: 280px;
+            margin-right: auto;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+            border:none;
+        }
+        a {
+            font-size: 30px;
+            margin-right: 50px; 
+            color: whitesmoke;
+        }
+        footer a, footer {
+            background-color:black;
+            color: white;
+            text-align: center;
+            padding: 0;
+            font-size: 20px;
+        }
+        h1{
+            text-decoration-style: none;
+        }
+        h2{
+            text-align:center;
+            font-size: 30px;
+            text-decoration:underline white;
+        }
+        p{
+            font-size: larger;
+            white-space: pre-wrap; 
+            margin: 0; 
+        }
+        ul{
+            text-align:left;
+            font-size: large;
+        }
+        b{
+            color:cyan;
+        }
+        .box a:hover{
+            color:yellow;
+        }
+        footer hr{
+            color:grey;
+            width:99vw;
+            height:2px;
+            fill:grey;
+        }
+        footer p {
+            padding-bottom:10px;
+            font-size:20px;
+        }
+        div.menu-icon {
+            display: none;
+        }
+        /* Media query for screens smaller than 425px */
+        @media (max-width: 850px) {
+            body {
+                background-image: url("../Images/Background.jpg");
+                background-color: black;
+            }
+            div[class="box"] {
+                display: none;
+            }
+            h1 {
+                font-size: 25px;
+                color: white;
+                text-align: center;
+                margin-top: 0;
+                padding-top:5px;
+            }
+            .projects {
+                padding: 10px;
+            }
+            div[class="project"] {
+                margin: 20px 10px;
+            }
+            div.menu-icon {
+            display: block;
+        }
+            @media (max-width: 550px){
+            div[class="project"] a img {
+                height: auto; 
+                width: 70%; 
+                margin-top: 0; 
+                display: flex;
+                margin: 0 auto;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+                border:none;
+            }
+        }
+        @media (min-width: 550px){
+            div[class="project"] a img {
+                height: auto; 
+                width: 40%; 
+                margin-top: 0; 
+                display: flex;
+                margin: 0 auto;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+                border:none;
+            }
+        }
+            footer a{
+                font-size:20px;
+                text-align: center;
+                padding-top:0;
+            }
+            footer hr{
+                color:grey;
+                width:98vw;
+                height:2px;
+                fill:grey;
+            }
+            footer p {
+                padding-bottom:15px;
+                padding-left:45px;
+            }
+        }
+
+        /* Hamburger menu styles */
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            display: block;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+        .menu-icon.active .bar1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+        .menu-icon.active .bar2 {
+            opacity: 0;
+        }
+        .menu-icon.active .bar3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: black;
+            border: 5px double whitesmoke;
+            width: 225px;
+            padding: 10px;
+            z-index: 1;
+        }
+        .menu a {
+            padding: 10px;
+            text-decoration: none;
+            color: whitesmoke;
+            text-align: left;
+            width: 100%;
+            font-size: 20px;
+        }
+        .menu a:hover {
+            background-color: gray;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -91,6 +303,32 @@
         <hr>
         <p style="text-align:center;"><a href="About.html">Learn More </a> |  <a href="Contact Us.html">Get in Touch</a></p>
     </footer>
-    <div id="mob-menu"></div>
+    <!-- Hamburger Menu for Mobile -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="Angad's Portfolio.html">Home</a><br><hr><br>
+        <a href="Projects.html">Projects</a><br><hr><br>
+        <a href="Achievements.html">Achievements</a><br><hr><br>
+        <a href="About.html">About</a><br><hr><br>
+        <a href="Contact Us.html">Contact Us</a><br>
+    </div>
+
+    <script type="text/javascript">
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var icon = document.querySelector(".menu-icon");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+                icon.classList.remove("active");
+            } else {
+                menu.style.display = "block";
+                icon.classList.add("active");
+            }
+        }
+    </script>
 </body>
 </html>
